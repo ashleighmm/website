@@ -1,0 +1,124 @@
+/*-----------------------------------------*/
+/* Extra Resetting */
+/*-----------------------------------------*/
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+strong,
+b,
+strong *,
+b * {
+  font-style: normal;
+  font-weight: bold !important;
+}
+
+em,
+i,
+em *,
+i * {
+  font-style: italic;
+}
+
+fieldset,
+img,
+a img {
+  border: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/*-----------------------------------------*/
+/* Global */
+/*-----------------------------------------*/
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: black;
+  color: white;
+  height: 100vh;
+}
+
+/* Typography */
+
+body,
+button,
+input {
+  font-family: 'Open Sans', sans-serif;
+  @include font-size(0.8);
+
+  @include tablet {
+    @include font-size(0.9);
+  }
+
+  @include desktop {
+    @include font-size(1);
+  }
+}
+
+/* Form Defaults */
+
+input {
+  border: none;
+  border-bottom: $light-grey-border;
+  font-family: 'Open Sans', serif;
+  padding: ($base-space-unit / 3) ($base-space-unit * 2.5)
+    ($base-space-unit / 3) $base-space-unit;
+
+  &:focus {
+    border-bottom-color: white;
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px black inset;
+    -webkit-text-fill-color: white !important;
+  }
+}
+
+button {
+  border: 0;
+  background-color: $brand-red;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  padding: ($base-space-unit / 2) ($base-space-unit * 3);
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: darken($brand-red, 10%);
+  }
+}
+
+/*-----------------------------------------*/
+/* Helpers */
+/*-----------------------------------------*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 100%;
+}
+
+.screen-reader {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

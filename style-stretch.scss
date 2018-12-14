@@ -1,0 +1,96 @@
+// Imported but not included in the stylesheet.
+
+@import 'variables';
+@import 'mixins';
+
+/*-----------------------------------------*/
+/* Stretch Styles */
+/*-----------------------------------------*/
+
+/* Header */
+
+.site-header {
+  transition: height 500ms ease;
+}
+
+/* Story Grid */
+
+.story-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.article-item {
+  overflow: hidden;
+}
+
+.article {
+  .story-meta {
+    bottom: -($base-space-unit);
+    left: 0;
+    height: 0;
+    position: absolute;
+    transition: all ease 0.7s;
+    width: 100%;
+  }
+
+  &:hover .story-meta {
+    bottom: 0;
+    height: 40%;
+  }
+}
+
+// Compiled in the stylesheet.
+@import 'selectric'; // for selectric
+
+.search-form-inner {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+
+  @include tablet {
+    display: inline-block;
+  }
+}
+
+.selectric {
+  background: #2c3e50;
+  border: 1px solid white;
+  text-align: left;
+
+  .label {
+    color: white;
+  }
+}
+
+.selectric-items {
+  background: #2c3e50;
+  color: white;
+  text-align: left;
+
+  li {
+    color: white;
+    max-width: 100%;
+
+    &.highlighted,
+    &.selected {
+      color: $light-grey;
+    }
+
+    &.highlighted {
+      background: #2c3e50;
+    }
+
+    &.selected {
+      background: #17212a;
+    }
+
+    &:hover,
+    &.selected {
+      &:hover {
+        background: #17212a;
+        color: $light-grey;
+      }
+    }
+  }
+}
